@@ -49,7 +49,7 @@ function App() {
 
   const onCreate = (content) => {
     dispatch({
-      type: "CREAtE",
+      type: "CREATE",
       data: {
         id: idRef.current++,
         isDone: false,
