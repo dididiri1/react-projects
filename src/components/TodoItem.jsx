@@ -20,23 +20,25 @@ const TodoItem = ({ id, isDone, content, date, onUpdate, onDelete }) => {
   );
 };
 
-export default memo(TodoItem, (prevProps, nextProps) => {
-  // 반환값에 따라, Props가 바뀌었는지 안바뀌었는지 판단
-  // T -> Props 바뀌지 않음 -> 리렌더링 X
-  // F -> Props 바뀜 -> 리렌더링 O
-  // onUpdate, onDelete만 뺴고 id, isDone, content, data 값만
-  // 바뀌었을 떄만 리렌더링 시켜주면 되니깐 콜백 함수 안에 조건문 정의
+//export default memo(TodoItem, (prevProps, nextProps) => {
+// 반환값에 따라, Props가 바뀌었는지 안바뀌었는지 판단
+// T -> Props 바뀌지 않음 -> 리렌더링 X
+// F -> Props 바뀜 -> 리렌더링 O
+// onUpdate, onDelete만 뺴고 id, isDone, content, data 값만
+// 바뀌었을 떄만 리렌더링 시켜주면 되니깐 콜백 함수 안에 조건문 정의
 
-  if (prevProps.id !== nextProps.id) {
-    return false;
-  }
-  if (prevProps.isDone !== nextProps.isDone) {
-    return false;
-  }
-  if (prevProps.content !== nextProps.content) {
-    return false;
-  }
-  if (prevProps.date !== nextProps.date) {
-    return false;
-  }
-});
+//   if (prevProps.id !== nextProps.id) {
+//     return false;
+//   }
+//   if (prevProps.isDone !== nextProps.isDone) {
+//     return false;
+//   }
+//   if (prevProps.content !== nextProps.content) {
+//     return false;
+//   }
+//   if (prevProps.date !== nextProps.date) {
+//     return false;
+//   }
+// });
+
+export default memo(TodoItem);
